@@ -3,7 +3,7 @@ const blogPosts = [
     {
         id: 'spelling-bee',
         title: 'Spelling Bee Game',
-        date: '2026-01-15',
+        date: '2026-01-04',
         type: 'interactive',
         component: 'spelling-bee'
     },

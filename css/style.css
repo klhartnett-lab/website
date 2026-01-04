@@ -210,6 +210,17 @@ a:hover {
     margin-bottom: 0.5rem;
 }
 
+.blog-post h2 a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.2s;
+}
+
+.blog-post h2 a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
 .blog-post-meta {
     color: var(--secondary-text);
     font-size: 0.9rem;
@@ -520,6 +531,326 @@ a:hover {
     
     .leaderboard-header {
         font-size: 0.75rem;
+    }
+}
+
+/* Spelling Bee Game Styles */
+.spelling-bee-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.spelling-bee-game-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.spelling-bee-letters-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.spelling-bee-hexagon {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spelling-bee-letter {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--border-color);
+    background-color: var(--bg-color);
+    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-size: 2rem;
+    font-weight: 400;
+    user-select: none;
+    transition: all 0.2s;
+}
+
+.spelling-bee-letter-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    font-weight: 600;
+    z-index: 10;
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+}
+
+.spelling-bee-letter-outer {
+    background-color: var(--card-bg);
+}
+
+.spelling-bee-letter-outer:nth-child(1) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.spelling-bee-letter-outer:nth-child(2) {
+    top: 25%;
+    right: 0;
+}
+
+.spelling-bee-letter-outer:nth-child(4) {
+    bottom: 25%;
+    right: 0;
+}
+
+.spelling-bee-letter-outer:nth-child(5) {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.spelling-bee-letter-outer:nth-child(6) {
+    bottom: 25%;
+    left: 0;
+}
+
+.spelling-bee-letter-outer:nth-child(7) {
+    top: 25%;
+    left: 0;
+}
+
+.spelling-bee-input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.spelling-bee-input-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.spelling-bee-input-group input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-size: 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+.spelling-bee-input-group input:focus {
+    outline: none;
+    border-color: var(--text-color);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.spelling-bee-feedback {
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-size: 0.9rem;
+    min-height: 1.5rem;
+    text-align: center;
+}
+
+.spelling-bee-feedback-success {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.spelling-bee-feedback-error {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-color: var(--text-color);
+}
+
+.spelling-bee-feedback-info {
+    background-color: var(--card-bg);
+    color: var(--secondary-text);
+}
+
+.spelling-bee-score-section {
+    padding: 1.5rem;
+    border: 2px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.spelling-bee-score-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+}
+
+.spelling-bee-score-label {
+    font-size: 1rem;
+}
+
+.spelling-bee-score-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.spelling-bee-progress-container {
+    width: 100%;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    background-color: var(--bg-color);
+    overflow: hidden;
+}
+
+.spelling-bee-progress-bar {
+    height: 100%;
+    background-color: var(--card-bg);
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+.spelling-bee-progress-bar.spelling-bee-great {
+    background-color: var(--card-bg);
+}
+
+.spelling-bee-progress-bar.spelling-bee-amazing {
+    background-color: var(--card-bg);
+}
+
+.spelling-bee-progress-bar.spelling-bee-genius {
+    background-color: var(--text-color);
+}
+
+.spelling-bee-genius-target {
+    text-align: center;
+    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    margin: 0;
+}
+
+.spelling-bee-actions {
+    text-align: center;
+}
+
+.spelling-bee-words-section {
+    padding: 1.5rem;
+    border: 2px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: 600px;
+}
+
+.spelling-bee-words-section h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.spelling-bee-found-words-container {
+    overflow-y: auto;
+    flex: 1;
+}
+
+.spelling-bee-no-words {
+    color: var(--secondary-text);
+    font-style: italic;
+    text-align: center;
+    padding: 2rem;
+    margin: 0;
+}
+
+.spelling-bee-words-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.spelling-bee-word-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    transition: background-color 0.2s;
+}
+
+.spelling-bee-word-item:hover {
+    background-color: var(--card-bg);
+}
+
+.spelling-bee-word-item:last-child {
+    border-bottom: none;
+}
+
+.spelling-bee-word-text {
+    flex: 1;
+    font-size: 1rem;
+}
+
+.spelling-bee-pangram {
+    background-color: var(--card-bg);
+    font-weight: 600;
+}
+
+.spelling-bee-pangram-badge {
+    color: var(--text-color);
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+.spelling-bee-word-score {
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+    min-width: 50px;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .spelling-bee-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .spelling-bee-hexagon {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .spelling-bee-letter {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .spelling-bee-letter-center {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+    
+    .spelling-bee-input-group {
+        flex-direction: column;
+    }
+    
+    .spelling-bee-words-section {
+        max-height: 400px;
     }
 }
 

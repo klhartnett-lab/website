@@ -6,7 +6,7 @@ class TicTacToe {
         this.player1Name = '';
         this.player2Name = '';
         this.gameActive = false;
-        this.leaderboard = {};
+        this.leaderboard = this.loadLeaderboard();
         
         this.winningConditions = [
             [0, 1, 2],
@@ -20,6 +20,28 @@ class TicTacToe {
         ];
         
         this.initializeEventListeners();
+        // Display existing leaderboard if there's data
+        this.updateLeaderboard();
+    }
+    
+    loadLeaderboard() {
+        try {
+            const stored = localStorage.getItem('ticTacToeLeaderboard');
+            if (stored) {
+                return JSON.parse(stored);
+            }
+        } catch (error) {
+            console.error('Error loading leaderboard from localStorage:', error);
+        }
+        return {};
+    }
+    
+    saveLeaderboard() {
+        try {
+            localStorage.setItem('ticTacToeLeaderboard', JSON.stringify(this.leaderboard));
+        } catch (error) {
+            console.error('Error saving leaderboard to localStorage:', error);
+        }
     }
     
     initializeEventListeners() {
@@ -53,9 +75,11 @@ class TicTacToe {
         // Initialize leaderboard if players are new
         if (!this.leaderboard[this.player1Name]) {
             this.leaderboard[this.player1Name] = { wins: 0, losses: 0, draws: 0 };
+            this.saveLeaderboard();
         }
         if (!this.leaderboard[this.player2Name]) {
             this.leaderboard[this.player2Name] = { wins: 0, losses: 0, draws: 0 };
+            this.saveLeaderboard();
         }
         
         // Hide setup, show game
@@ -142,6 +166,7 @@ class TicTacToe {
         // Update leaderboard
         this.leaderboard[winnerName].wins++;
         this.leaderboard[loserName].losses++;
+        this.saveLeaderboard();
         
         // Highlight winning cells
         for (let condition of this.winningConditions) {
@@ -166,6 +191,7 @@ class TicTacToe {
         // Update leaderboard
         this.leaderboard[this.player1Name].draws++;
         this.leaderboard[this.player2Name].draws++;
+        this.saveLeaderboard();
         
         document.getElementById('current-player').textContent = "It's a draw!";
         this.updateLeaderboard();
@@ -173,6 +199,9 @@ class TicTacToe {
     
     updateLeaderboard() {
         const leaderboardDiv = document.getElementById('leaderboard');
+        if (!leaderboardDiv) {
+            return; // Leaderboard div doesn't exist yet
+        }
         
         // Sort players by wins (descending), then by losses (ascending)
         const sortedPlayers = Object.entries(this.leaderboard)
@@ -209,8 +238,5 @@ class TicTacToe {
     }
 }
 
-// Initialize game when page loads
-document.addEventListener('DOMContentLoaded', () => {
-    new TicTacToe();
-});
+// Game will be initialized by blog.js when the post is rendered
 

@@ -8,12 +8,42 @@ class SpellingBee {
         this.validatedWordsCache = new Map(); // Cache API responses
         this.maxScore = 0; // Will be calculated or set as genius target
         
-        this.generatePuzzle();
         this.initializeEventListeners();
+        // Generate puzzle asynchronously
+        this.generatePuzzle();
     }
     
-    generatePuzzle() {
-        // Generate 7 random letters (ensuring at least one vowel)
+    async generatePuzzle() {
+        // Try to generate puzzle from pangram candidates
+        let puzzle = null;
+        
+        if (typeof generatePuzzleFromPangrams !== 'undefined') {
+            puzzle = await generatePuzzleFromPangrams();
+        }
+        
+        // Fallback to random if pangram generation fails
+        if (!puzzle) {
+            puzzle = this.generateRandomPuzzle();
+        }
+        
+        // Set puzzle properties
+        this.letters = puzzle.letters;
+        this.centerLetter = puzzle.centerLetter;
+        
+        // Calculate genius target based on word count (aim for ~70% of total possible score)
+        const estimatedMaxScore = puzzle.wordCount ? puzzle.wordCount * 2 : 100;
+        this.maxScore = Math.max(50, Math.floor(estimatedMaxScore * 0.7));
+        
+        // Reset game state
+        this.foundWords.clear();
+        this.score = 0;
+        this.validatedWordsCache.clear();
+        
+        this.updateDisplay();
+    }
+    
+    generateRandomPuzzle() {
+        // Fallback: Generate 7 random letters (ensuring at least one vowel)
         const vowels = ['A', 'E', 'I', 'O', 'U'];
         const consonants = 'BCDFGHJKLMNPQRSTVWXYZ'.split('');
         
@@ -43,20 +73,16 @@ class SpellingBee {
         }
         
         // Combine and shuffle
-        this.letters = [...selectedVowels, ...selectedConsonants].sort(() => Math.random() - 0.5);
+        const letters = [...selectedVowels, ...selectedConsonants].sort(() => Math.random() - 0.5);
         
         // Set center letter (random from the 7)
-        this.centerLetter = this.letters[Math.floor(Math.random() * this.letters.length)];
+        const centerLetter = letters[Math.floor(Math.random() * letters.length)];
         
-        // Set genius target (70% of estimated max score, or minimum 50 points)
-        this.maxScore = Math.max(50, Math.floor(Math.random() * 100 + 50));
-        
-        // Reset game state
-        this.foundWords.clear();
-        this.score = 0;
-        this.validatedWordsCache.clear();
-        
-        this.updateDisplay();
+        return {
+            letters: letters,
+            centerLetter: centerLetter,
+            wordCount: 0
+        };
     }
     
     initializeEventListeners() {
@@ -77,7 +103,13 @@ class SpellingBee {
         }
         
         if (newPuzzleButton) {
-            newPuzzleButton.addEventListener('click', () => this.generatePuzzle());
+            newPuzzleButton.addEventListener('click', async () => {
+                newPuzzleButton.disabled = true;
+                newPuzzleButton.textContent = 'Generating...';
+                await this.generatePuzzle();
+                newPuzzleButton.disabled = false;
+                newPuzzleButton.textContent = 'New Puzzle';
+            });
         }
     }
     

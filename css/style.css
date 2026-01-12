@@ -16,7 +16,7 @@
 }
 
 body {
-    font-family: 'Georgia', 'Times New Roman', 'Latin Modern Roman', serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.7;
     color: var(--text-color);
     background-color: var(--bg-color);
@@ -42,7 +42,7 @@ nav ul {
 nav a {
     color: var(--text-color);
     text-decoration: none;
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
     font-weight: 400;
     transition: all 0.2s;
 }
@@ -52,10 +52,10 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Typography - Monospace for headings (code feel), Serif for body (math-friendly) */
+/* Typography - JetBrains Mono for headings (code/AI feel), Inter for body */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', 'Liberation Mono', monospace;
-    font-weight: 400;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-weight: 500;
     letter-spacing: -0.02em;
 }
 
@@ -126,7 +126,7 @@ a:hover {
     color: var(--text-color);
     max-width: 800px;
     margin: 0 auto 1rem;
-    font-family: 'Georgia', 'Times New Roman', serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .hero-description {
@@ -134,7 +134,7 @@ a:hover {
 }
 
 .hero-description a {
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
     text-decoration: none;
 }
 
@@ -195,7 +195,7 @@ a:hover {
     font-size: 2.5rem;
     margin: 0;
     line-height: 1.2;
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
 }
 
 .book-subtitle {
@@ -212,7 +212,7 @@ a:hover {
 }
 
 .book-release {
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
     font-size: 0.9rem;
     color: var(--secondary-text);
     margin: 0.5rem 0;
@@ -224,8 +224,8 @@ a:hover {
     background-color: var(--text-color);
     color: var(--bg-color);
     border: 2px solid var(--text-color);
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
-    font-weight: 400;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-weight: 500;
     text-decoration: none;
     transition: all 0.2s;
     margin-top: 0.8rem;
@@ -285,7 +285,7 @@ a:hover {
 }
 
 .featured-meta {
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
     font-size: 0.85rem;
     color: var(--secondary-text);
     margin: 0;
@@ -297,7 +297,7 @@ a:hover {
 }
 
 .section-link a {
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
     text-decoration: none;
     font-size: 1rem;
 }
@@ -324,7 +324,7 @@ a:hover {
 }
 
 .article-item h3 {
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
 }
 
 .article-item:last-child {
@@ -391,7 +391,7 @@ a:hover {
     color: var(--secondary-text);
     font-size: 0.9rem;
     margin-bottom: 1.5rem;
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
 }
 
 .blog-content {
@@ -419,7 +419,7 @@ a:hover {
     background-color: var(--card-bg);
     padding: 0.2rem 0.4rem;
     border: 1px solid var(--border-color);
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
     font-size: 0.9em;
 }
 
@@ -518,14 +518,14 @@ a:hover {
 }
 
 .player-input label {
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
     font-weight: 400;
 }
 
 .player-input input {
     padding: 0.75rem;
     border: 2px solid var(--border-color);
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
     font-size: 1rem;
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -542,7 +542,7 @@ a:hover {
     background-color: var(--text-color);
     color: var(--bg-color);
     border: 2px solid var(--text-color);
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
     font-weight: 400;
     font-size: 1rem;
     cursor: pointer;
@@ -571,7 +571,7 @@ a:hover {
     margin-bottom: 1.5rem;
     padding: 1rem;
     border: 2px solid var(--border-color);
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
 }
 
 .board-container {
@@ -597,7 +597,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
     font-size: 3rem;
     font-weight: 400;
     cursor: pointer;
@@ -645,7 +645,7 @@ a:hover {
 }
 
 .leaderboard {
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
 }
 
 .leaderboard-header {
@@ -768,7 +768,7 @@ a:hover {
     justify-content: center;
     border: 3px solid var(--border-color);
     background-color: var(--bg-color);
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
     font-size: 2rem;
     font-weight: 400;
     user-select: none;
@@ -839,7 +839,7 @@ a:hover {
     flex: 1;
     padding: 0.75rem;
     border: 2px solid var(--border-color);
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
     font-size: 1rem;
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -855,7 +855,7 @@ a:hover {
 .spelling-bee-feedback {
     padding: 0.75rem;
     border: 2px solid var(--border-color);
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
     font-size: 0.9rem;
     min-height: 1.5rem;
     text-align: center;
@@ -889,7 +889,7 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
 }
 
 .spelling-bee-score-label {
@@ -930,7 +930,7 @@ a:hover {
 
 .spelling-bee-genius-target {
     text-align: center;
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
     font-size: 0.9rem;
     color: var(--secondary-text);
     margin: 0;
@@ -980,7 +980,7 @@ a:hover {
     justify-content: space-between;
     padding: 0.75rem;
     border-bottom: 1px solid var(--border-color);
-    font-family: 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', 'Consolas', monospace;
     transition: background-color 0.2s;
 }
 

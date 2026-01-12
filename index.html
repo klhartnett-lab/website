@@ -17,22 +17,92 @@
         </ul>
     </nav>
 
-    <div class="hero">
-        <h1>The Proof in the Code</h1>
-        <a href="https://us.macmillan.com/books/9780374620059/theproofinthecode/"><img src="images/book-cover.jpg" alt="The Proof in the Code" class="book-cover"></a>
-        <p>Coming June 2026</p>
-        <a href="https://us.macmillan.com/books/9780374620059/theproofinthecode/" class="cta-button">pre-order</a>
+    <!-- Header Image Section -->
+    <div class="header-image-section">
+        <img src="images/header.jpg" alt="Kevin Hartnett" class="header-image" id="header-image" onerror="this.style.display='none'; this.parentElement.style.display='none';">
     </div>
 
-    <div class="content">
-        <p>The inside story of Lean, a computer program that answers the age-old question: How do you know if something is true?</p>
-        
-        <p>It began as an obscure bug-checking program at Microsoft Research developed by a lone computer engineer named Leo de Moura. Then an unlikely crew of mathematical misfits caught wind of it and began to adopt it with messianic zeal. Their goal was to create a truth machine that could provide the rarest of all commodities in life: a complete, 100 percent guarantee that something is true. Its name: Lean.</p>
-        
-        <p>As the movement grew and strengthened the program's capabilities, it drew in two of the world's most prominent mathematicians: Peter Scholze and Terence Tao. Google DeepMind, Meta AI, and other tech firms started using the program to supercharge computer reasoning. Now it's remaking the multi-thousand-year history of how mathematicians work, collaborate, and assess truth, while charting a new path in the march toward machine intelligence.</p>
-        
-        <p>In The Proof in the Code, Kevin Hartnett tells the definitive story of the birth and rise of Lean, and how a growing movement is transforming the enterprise of mathematics and ushering in a new era of human–computer collaboration. An engrossing, character driven narrative filled with insights about the future of math, computers, and AI, this brilliant work of journalism from one of the world's leading math writers offers a profound answer to the question: Can computers reveal universal truths?</p>
+    <!-- Hero Intro Section -->
+    <div class="hero-intro">
+        <p class="hero-tagline">Kevin is a math and technology writer covering mathematics, computer science, and AI.</p>
+        <p class="hero-description"><a href="about.html">Learn More</a></p>
     </div>
+
+    <!-- Book Section -->
+    <section class="book-section">
+        <div class="book-content">
+            <div class="book-cover-wrapper">
+                <a href="https://us.macmillan.com/books/9780374620059/theproofinthecode/"><img src="images/book-cover.jpg" alt="The Proof in the Code" class="book-cover"></a>
+            </div>
+            <div class="book-info">
+                <h1 class="book-title">THE PROOF IN THE CODE</h1>
+                <p class="book-subtitle">How do you know if something is true?</p>
+                <p class="book-description">The inside story of Lean, a computer program that answers the age-old question: How do you know if something is true?</p>
+                <p class="book-release">Coming June 2026</p>
+                <a href="https://us.macmillan.com/books/9780374620059/theproofinthecode/" class="cta-button">Pre-order</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Articles Section -->
+    <section class="featured-section">
+        <h2>Featured Articles</h2>
+        <div class="featured-grid">
+            <article class="featured-item">
+                <h3><a href="https://www.quantamagazine.org/lean-computer-program-confirms-peter-scholze-proof-20210728/">Proof Assistant Makes Jump to Big-League Math</a></h3>
+                <p class="featured-meta">Quanta Magazine • July 28, 2021</p>
+            </article>
+            <article class="featured-item">
+                <h3><a href="https://www.quantamagazine.org/building-the-mathematical-library-of-the-future-20201001/">Building the Mathematical Library of the Future</a></h3>
+                <p class="featured-meta">Quanta Magazine • October 1, 2020</p>
+            </article>
+            <article class="featured-item">
+                <h3><a href="https://www.quantamagazine.org/at-the-international-mathematical-olympiad-artificial-intelligence-prepares-to-go-for-the-gold-20200921/">At the Math Olympiad, Computers Prepare to Go for the Gold</a></h3>
+                <p class="featured-meta">Quanta Magazine • September 21, 2020</p>
+            </article>
+        </div>
+        <p class="section-link"><a href="articles.html">See All Articles →</a></p>
+    </section>
+
+    <!-- Featured Blog Posts Section -->
+    <section class="featured-section">
+        <h2>Recent Blog Posts</h2>
+        <div id="featured-blog-posts" class="featured-grid">
+            <!-- Blog posts will be loaded here -->
+        </div>
+        <p class="section-link"><a href="blog.html">See All Blog Posts →</a></p>
+    </section>
+
+    <script src="js/blog.js"></script>
+    <script>
+        // Load featured blog posts on homepage
+        if (typeof blogPosts !== 'undefined') {
+            const featuredContainer = document.getElementById('featured-blog-posts');
+            if (featuredContainer) {
+                const sortedPosts = blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+                const featuredPosts = sortedPosts.slice(0, 3); // Show 3 most recent
+                
+                if (featuredPosts.length > 0) {
+                    let html = '';
+                    featuredPosts.forEach(post => {
+                        const dateFormatted = new Date(post.date).toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+                        const postUrl = `blog-${post.id}.html`;
+                        html += `
+                            <article class="featured-item">
+                                <h3><a href="${postUrl}">${post.title}</a></h3>
+                                <p class="featured-meta">${dateFormatted}</p>
+                            </article>
+                        `;
+                    });
+                    featuredContainer.innerHTML = html;
+                }
+            }
+        }
+    </script>
 </body>
 </html>
 

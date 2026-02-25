@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Oil Production Forecast - Kevin Hartnett</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="oil-production.html">Oil Production</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="content oil-content">
+        <h1>Global Oil Production Forecast</h1>
+        <p class="oil-subtitle">Country-by-country production estimates (2020–2028) with major project tracking, decline rate analysis, and price scenario modeling.</p>
+        <p class="oil-last-updated" id="oil-last-updated"></p>
+
+        <!-- Controls -->
+        <div id="oil-controls" class="oil-controls"></div>
+
+        <!-- Main Production Table -->
+        <section class="oil-section">
+            <h2>Production by Country</h2>
+            <div id="oil-table-container"></div>
+        </section>
+
+        <!-- Scenario Comparison -->
+        <section class="oil-section">
+            <h2>Scenario Analysis</h2>
+            <div id="oil-scenario-comparison"></div>
+        </section>
+
+        <!-- Decline Rates -->
+        <section class="oil-section">
+            <h2>Existing Field Decline Rates</h2>
+            <div id="oil-decline-section"></div>
+        </section>
+
+        <!-- Major Projects -->
+        <section class="oil-section">
+            <h2>Major Projects Pipeline</h2>
+            <div id="oil-projects-section"></div>
+        </section>
+
+        <!-- Data Update Section -->
+        <section class="oil-section">
+            <h2>Update & Maintain Estimates</h2>
+            <div id="oil-update-section"></div>
+        </section>
+
+        <!-- Methodology -->
+        <section class="oil-section oil-methodology">
+            <h2>Methodology & Sources</h2>
+            <div class="oil-methodology-content">
+                <p><strong>Historical data (2020–2024):</strong> U.S. Energy Information Administration (EIA), International Energy Agency (IEA), and OPEC Monthly Oil Market Report (MOMR). Figures represent crude oil + condensate production.</p>
+                <p><strong>Estimates (2025–2028):</strong> Based on announced project timelines, field decline curves, OPEC+ policy assumptions, and capital expenditure guidance from national oil companies and major IOCs.</p>
+                <p><strong>Decline rates:</strong> Estimated weighted-average natural decline for existing producing fields, absent new drilling or enhanced recovery. Actual decline is partially offset by infill drilling, workovers, and EOR. Rates vary by field maturity and geology.</p>
+                <p><strong>Price scenarios:</strong></p>
+                <ul>
+                    <li><strong>Bear ($45–55):</strong> Demand destruction from recession/EV adoption; OPEC+ loses discipline; oversupply. Capex cut → project delays and steeper effective declines.</li>
+                    <li><strong>Base ($65–80):</strong> Current consensus trajectory. Moderate demand growth, OPEC+ manages supply. All sanctioned projects proceed on schedule.</li>
+                    <li><strong>Bull ($90–110):</strong> Supply disruptions, strong demand, geopolitical risk premia. All FID-pending projects sanctioned; enhanced recovery investments accelerated.</li>
+                </ul>
+                <p><strong>Limitations:</strong> This is an analytical model, not a prediction. Geopolitical events, OPEC+ policy shifts, technology breakthroughs, and demand-side changes can materially alter outcomes. Country production may also be constrained by OPEC+ quotas rather than capacity.</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/oil-production.js"></script>
+    <script>
+        // Set last-updated date
+        document.getElementById("oil-last-updated").textContent = 
+            "Model last updated: " + OIL_DATA.lastUpdated;
+    </script>
+</body>
+</html>

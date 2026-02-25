@@ -436,6 +436,21 @@ a:hover {
     padding: 0;
 }
 
+/* Embedded interactive apps (iframes) */
+.embed-frame {
+    width: 100%;
+    border: 2px solid var(--border-color);
+    background: var(--bg-color);
+    margin: 1.5rem 0 0 0;
+}
+
+.embed-frame iframe {
+    width: 100%;
+    height: min(720px, 78vh);
+    border: 0;
+    display: block;
+}
+
 /* About Page */
 .about-content {
     display: grid;
@@ -1047,3 +1062,648 @@ a:hover {
     }
 }
 
+/* ============================================================
+   Oil Production Forecast Page
+   ============================================================ */
+
+.oil-content {
+    max-width: 1200px;
+}
+
+.oil-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.oil-subtitle {
+    font-size: 1.1rem;
+    color: var(--secondary-text);
+    margin-bottom: 0.5rem;
+}
+
+.oil-last-updated {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--secondary-text);
+    margin-bottom: 2rem;
+}
+
+.oil-section {
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.oil-section:last-of-type {
+    border-bottom: none;
+}
+
+.oil-section h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Controls --- */
+.oil-controls {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 2px solid var(--border-color);
+    background: var(--card-bg);
+}
+
+.oil-controls-row {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.oil-control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.oil-control-group label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.oil-scenario-buttons {
+    display: flex;
+    gap: 0;
+}
+
+.oil-scenario-btn, .oil-display-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--border-color);
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-left: -2px;
+}
+
+.oil-scenario-btn:first-child, .oil-display-btn:first-child {
+    margin-left: 0;
+}
+
+.oil-scenario-btn.active, .oil-display-btn.active {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+.oil-scenario-btn:hover:not(.active), .oil-display-btn:hover:not(.active) {
+    background: var(--card-bg);
+}
+
+.oil-price-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.oil-price-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
+}
+
+/* --- Main Table --- */
+.oil-table-scroll {
+    overflow-x: auto;
+    margin-bottom: 0.5rem;
+}
+
+.oil-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.oil-table th,
+.oil-table td {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border-color);
+    text-align: right;
+}
+
+.oil-table th {
+    background: var(--text-color);
+    color: var(--bg-color);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    font-size: 0.8rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
+
+.oil-table th:hover {
+    background: #333;
+}
+
+.oil-table th.sortable::after {
+    content: " ⇅";
+    font-size: 0.7rem;
+    opacity: 0.5;
+}
+
+.oil-th-country,
+.oil-td-country {
+    text-align: left;
+    min-width: 160px;
+    position: sticky;
+    left: 0;
+    z-index: 5;
+}
+
+.oil-th-country {
+    z-index: 15;
+}
+
+.oil-td-country {
+    background: var(--bg-color);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.oil-th-decline,
+.oil-td-decline {
+    text-align: center;
+    min-width: 80px;
+}
+
+.oil-th-estimate {
+    background: #222 !important;
+}
+
+.oil-td-estimate {
+    background: #fafaf5;
+}
+
+.oil-td-actual {
+    background: var(--bg-color);
+}
+
+.oil-country-row {
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.oil-country-row:hover td {
+    background-color: var(--card-bg) !important;
+}
+
+.oil-expand-toggle {
+    display: inline-block;
+    width: 1em;
+    font-size: 0.75rem;
+    color: var(--secondary-text);
+}
+
+.oil-flag {
+    font-size: 1rem;
+}
+
+.oil-val {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.oil-mini-change {
+    display: block;
+    font-size: 0.65rem;
+    font-family: 'JetBrains Mono', monospace;
+    opacity: 0.6;
+    margin-top: 2px;
+}
+
+.oil-change-pct {
+    display: block;
+    font-size: 0.65rem;
+    font-family: 'JetBrains Mono', monospace;
+    opacity: 0.6;
+    margin-top: 2px;
+}
+
+.oil-positive {
+    color: #006600;
+}
+
+.oil-negative {
+    color: #990000;
+}
+
+.oil-total-row td {
+    background: var(--card-bg) !important;
+    border-top: 3px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+.oil-table-note {
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* --- Inline Project Tables --- */
+.oil-project-row td {
+    padding: 0;
+    background: var(--card-bg);
+}
+
+.oil-projects-inline {
+    padding: 1rem 1.5rem;
+}
+
+.oil-project-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+
+.oil-project-table th {
+    background: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 0.4rem 0.6rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    text-align: left;
+    position: static;
+}
+
+.oil-project-table td {
+    border: 1px solid var(--border-color);
+    padding: 0.4rem 0.6rem;
+    text-align: left;
+    white-space: normal;
+}
+
+.oil-proj-name {
+    font-weight: 500;
+    font-family: 'JetBrains Mono', monospace;
+    min-width: 200px;
+}
+
+.oil-proj-notes {
+    font-size: 0.75rem;
+    color: var(--secondary-text);
+    max-width: 300px;
+}
+
+.oil-status-badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.oil-status-producing {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+.oil-status-developing {
+    border: 2px solid var(--text-color);
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.oil-status-evaluating {
+    border: 2px dashed var(--secondary-text);
+    background: var(--bg-color);
+    color: var(--secondary-text);
+}
+
+/* --- Scenario Comparison Table --- */
+.oil-scenario-table-wrap {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+}
+
+.oil-scenario-table td,
+.oil-scenario-table th {
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.oil-active-scenario td {
+    background: var(--card-bg);
+    font-weight: 600;
+}
+
+.oil-spread-row td {
+    border-top: 2px solid var(--border-color);
+    font-style: italic;
+    color: var(--secondary-text);
+}
+
+.oil-price-row-labels {
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+    margin-top: 1rem;
+}
+
+.oil-price-row-labels div {
+    margin-bottom: 0.3rem;
+}
+
+/* --- Decline Rate Bars --- */
+.oil-decline-explainer {
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    margin-bottom: 1.5rem;
+}
+
+.oil-decline-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.oil-decline-item {
+    display: grid;
+    grid-template-columns: 180px 1fr 60px;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.oil-decline-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.oil-decline-bar-bg {
+    height: 18px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.oil-decline-bar {
+    height: 100%;
+    transition: width 0.5s ease;
+}
+
+.oil-decline-mild {
+    background: #bbb;
+}
+
+.oil-decline-moderate {
+    background: #777;
+}
+
+.oil-decline-severe {
+    background: var(--text-color);
+}
+
+.oil-decline-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: right;
+}
+
+/* --- Project Cards --- */
+.oil-project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.oil-project-card {
+    border: 2px solid var(--border-color);
+    padding: 1.25rem;
+    transition: all 0.2s;
+}
+
+.oil-project-card:hover {
+    background: var(--card-bg);
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0 var(--text-color);
+}
+
+.oil-project-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.oil-project-card h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.oil-project-type {
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+    margin-bottom: 0.3rem;
+}
+
+.oil-project-peak {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.oil-project-note {
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+    margin: 0;
+}
+
+/* --- Update Section --- */
+.oil-update-explainer {
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    margin-bottom: 1.5rem;
+}
+
+.oil-update-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.oil-update-left,
+.oil-update-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.oil-update-controls label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.oil-update-controls select,
+.oil-update-controls input[type="number"],
+.oil-update-controls input[type="text"] {
+    padding: 0.5rem 0.75rem;
+    border: 2px solid var(--border-color);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.oil-update-controls select:focus,
+.oil-update-controls input:focus,
+.oil-update-controls textarea:focus {
+    outline: none;
+    border-color: var(--text-color);
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+}
+
+.oil-update-controls textarea {
+    padding: 0.5rem 0.75rem;
+    border: 2px solid var(--border-color);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    background: var(--bg-color);
+    color: var(--text-color);
+    resize: vertical;
+}
+
+.oil-update-log {
+    padding: 1.5rem;
+    border: 2px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.oil-update-log h4 {
+    font-family: 'JetBrains Mono', monospace;
+    margin: 0 0 1rem 0;
+}
+
+.oil-log-entry {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.8rem;
+}
+
+.oil-log-entry:last-child {
+    border-bottom: none;
+}
+
+.oil-log-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    margin-right: 0.5rem;
+}
+
+.oil-log-detail {
+    color: var(--secondary-text);
+}
+
+.oil-no-updates {
+    color: var(--secondary-text);
+    font-style: italic;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.oil-auto-update-info {
+    padding: 1.5rem;
+    border: 2px solid var(--border-color);
+    background: var(--card-bg);
+}
+
+.oil-auto-update-info h4 {
+    font-family: 'JetBrains Mono', monospace;
+    margin: 0 0 0.75rem 0;
+}
+
+.oil-auto-update-info ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.oil-auto-update-info li {
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.oil-auto-update-info p {
+    font-size: 0.9rem;
+}
+
+/* --- Methodology --- */
+.oil-methodology-content {
+    font-size: 0.95rem;
+}
+
+.oil-methodology-content ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.oil-methodology-content li {
+    margin-bottom: 0.4rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .oil-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .oil-controls-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .oil-scenario-buttons {
+        flex-direction: column;
+    }
+
+    .oil-scenario-btn, .oil-display-btn {
+        margin-left: 0;
+        margin-top: -2px;
+    }
+
+    .oil-scenario-btn:first-child, .oil-display-btn:first-child {
+        margin-top: 0;
+    }
+
+    .oil-decline-item {
+        grid-template-columns: 120px 1fr 50px;
+    }
+
+    .oil-decline-label {
+        font-size: 0.7rem;
+    }
+
+    .oil-project-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .oil-update-controls {
+        grid-template-columns: 1fr;
+    }
+}

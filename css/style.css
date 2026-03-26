@@ -363,10 +363,10 @@ a:hover {
     list-style: none;
     margin: 0 0 2rem;
     padding: 0;
-    max-width: 38rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.65rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    align-items: stretch;
 }
 
 .featured-block {
@@ -375,6 +375,9 @@ a:hover {
     border: 1px solid var(--border);
     border-radius: 2px;
     background: var(--bg);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .featured-block h3 {
@@ -401,11 +404,12 @@ a:hover {
     font-size: 0.875rem;
     color: var(--text-muted);
     margin: 0;
+    margin-top: auto;
+    padding-top: 0.5rem;
 }
 
 .featured-section .section-link {
     text-align: left;
-    max-width: 38rem;
 }
 
 .section-link {
@@ -537,6 +541,10 @@ a:hover {
 
     .cta-button {
         align-self: center;
+    }
+
+    .featured-list {
+        grid-template-columns: 1fr;
     }
 
     .about-content {

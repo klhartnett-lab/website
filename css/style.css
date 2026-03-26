@@ -359,16 +359,19 @@ a:hover {
 .book-pullquote-attribution {
     margin: 1.1rem 0 0;
     font-family: var(--font-ui);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: none;
     color: var(--text-muted);
     font-style: normal;
 }
 
 .book-pullquote cite {
     font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
 .book-content {

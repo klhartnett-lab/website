@@ -15,8 +15,6 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="articles.html">Articles</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="oil-production.html">Oil Production</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
@@ -36,14 +34,14 @@
     <section class="book-section">
         <div class="book-content">
             <div class="book-cover-wrapper">
-                <a href="https://us.macmillan.com/books/9780374620059/theproofinthecode/"><img src="images/book-cover.jpg" alt="The Proof in the Code" class="book-cover"></a>
+                <a href="https://www.quantabooks.org/books/the-proof-in-the-code/"><img src="images/book-cover.jpg" alt="The Proof in the Code" class="book-cover"></a>
             </div>
             <div class="book-info">
                 <h1 class="book-title">THE PROOF IN THE CODE</h1>
                 <p class="book-subtitle">How do you know if something is true?</p>
                 <p class="book-description">The inside story of Lean, a computer program that answers the age-old question: How do you know if something is true?</p>
                 <p class="book-release">Coming June 2026</p>
-                <a href="https://us.macmillan.com/books/9780374620059/theproofinthecode/" class="cta-button">Pre-order</a>
+                <a href="https://www.quantabooks.org/books/the-proof-in-the-code/" class="cta-button">Pre-order</a>
             </div>
         </div>
     </section>
@@ -67,46 +65,6 @@
         </div>
         <p class="section-link"><a href="articles.html">See All Articles →</a></p>
     </section>
-
-    <!-- Featured Blog Posts Section -->
-    <section class="featured-section">
-        <h2>Recent Blog Posts</h2>
-        <div id="featured-blog-posts" class="featured-grid">
-            <!-- Blog posts will be loaded here -->
-        </div>
-        <p class="section-link"><a href="blog.html">See All Blog Posts →</a></p>
-    </section>
-
-    <script src="js/blog.js"></script>
-    <script>
-        // Load featured blog posts on homepage
-        if (typeof blogPosts !== 'undefined') {
-            const featuredContainer = document.getElementById('featured-blog-posts');
-            if (featuredContainer) {
-                const sortedPosts = blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
-                const featuredPosts = sortedPosts.slice(0, 3); // Show 3 most recent
-                
-                if (featuredPosts.length > 0) {
-                    let html = '';
-                    featuredPosts.forEach(post => {
-                        const dateFormatted = new Date(post.date).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                        });
-                        const postUrl = `blog-${post.id}.html`;
-                        html += `
-                            <article class="featured-item">
-                                <h3><a href="${postUrl}">${post.title}</a></h3>
-                                <p class="featured-meta">${dateFormatted}</p>
-                            </article>
-                        `;
-                    });
-                    featuredContainer.innerHTML = html;
-                }
-            }
-        }
-    </script>
 </body>
 </html>
 

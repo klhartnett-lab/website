@@ -2,8 +2,8 @@
 :root {
     --bg: #ffffff;
     --bg-elevated: #ffffff;
-    --bg-panel: #f8fafc;
-    --bg-panel-hover: #f1f5f9;
+    --bg-panel: #ffffff;
+    --bg-panel-hover: #f5f5f5;
     --text: #0f172a;
     --text-muted: #475569;
     --text-subtle: #64748b;
@@ -28,6 +28,7 @@
 
 html {
     scroll-behavior: smooth;
+    background-color: var(--bg);
 }
 
 body {

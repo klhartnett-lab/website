@@ -345,69 +345,67 @@ a:hover {
     text-underline-offset: 4px;
 }
 
-/* Selected articles */
+/* Selected articles — simple stacked text blocks */
 .featured-section {
     margin: 0;
-    padding: clamp(3rem, 8vw, 5rem) 0;
+    padding: clamp(2.5rem, 6vw, 4rem) 0;
     border-bottom: none;
 }
 
 .featured-section h2 {
-    font-size: clamp(1.65rem, 3vw, 2rem);
-    margin-bottom: 2.5rem;
-    text-align: center;
+    font-size: clamp(1.5rem, 2.5vw, 1.85rem);
+    margin-bottom: 1.25rem;
+    text-align: left;
     font-weight: 600;
 }
 
-.featured-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.75rem;
-    margin-bottom: 2.5rem;
-}
-
-.featured-item {
-    padding: 1.35rem 1.5rem;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    background: var(--bg-panel);
-    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.25s ease;
-}
-
-.featured-item:hover {
-    background: var(--bg-panel-hover);
-    border-color: var(--border-strong);
-    box-shadow: var(--shadow-soft);
-}
-
-.featured-item h3 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-size: 1.15rem;
-    line-height: 1.35;
+.featured-list {
+    list-style: none;
+    margin: 0 0 2rem;
     padding: 0;
-    font-family: var(--font-display);
+    max-width: 38rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.featured-block {
+    margin: 0;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: var(--bg);
+}
+
+.featured-block h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+    line-height: 1.4;
+    font-family: var(--font-body);
     font-weight: 600;
 }
 
-.featured-item h3 a {
+.featured-block h3 a {
     text-decoration: none;
     color: var(--text);
 }
 
-.featured-item h3 a:hover {
+.featured-block h3 a:hover {
     color: var(--accent);
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .featured-meta {
-    font-family: var(--font-ui);
-    font-size: 0.78rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--text-subtle);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--text-muted);
     margin: 0;
-    padding: 0;
+}
+
+.featured-section .section-link {
+    text-align: left;
+    max-width: 38rem;
 }
 
 .section-link {
@@ -539,10 +537,6 @@ a:hover {
 
     .cta-button {
         align-self: center;
-    }
-
-    .featured-grid {
-        grid-template-columns: 1fr;
     }
 
     .about-content {

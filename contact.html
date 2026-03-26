@@ -36,8 +36,32 @@
         
         <p>For other book queries, please send them to us at Quanta Books: <a href="mailto:info@quantabooks.org">info@quantabooks.org</a></p>
         
-        <p>For inquiries about writing, speaking engagements, or other collaborations, please feel free to get in touch.</p>
+        <p>For inquiries about writing, speaking engagements, or other collaborations, please feel free to <a href="#contact-form">get in touch</a>.</p>
+
+        <!-- Create a free form at https://formspree.io and replace PLACEHOLDER below with your form ID. Your email is configured only in Formspree — it is never stored in this file. -->
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/PLACEHOLDER" method="POST">
+            <input type="hidden" name="_subject" value="Message from kevinhartnett.com contact form">
+            <div class="contact-form-honeypot" aria-hidden="true">
+                <label for="contact-company">Company</label>
+                <input type="text" id="contact-company" name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
+            <p class="contact-form-status" role="status" aria-live="polite"></p>
+            <div class="contact-form-field">
+                <label for="contact-name">Name</label>
+                <input type="text" id="contact-name" name="name" autocomplete="name">
+            </div>
+            <div class="contact-form-field">
+                <label for="contact-email">Email <span class="contact-form-required">(required)</span></label>
+                <input type="email" id="contact-email" name="email" required autocomplete="email" inputmode="email">
+            </div>
+            <div class="contact-form-field">
+                <label for="contact-message">Message <span class="contact-form-required">(required)</span></label>
+                <textarea id="contact-message" name="message" required rows="6"></textarea>
+            </div>
+            <button type="submit" class="contact-form-submit">Send message</button>
+        </form>
     </div>
     </main>
+    <script src="js/contact.js" defer></script>
 </body>
 </html>

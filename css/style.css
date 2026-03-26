@@ -182,6 +182,114 @@ a:hover {
     margin-bottom: 1.5rem;
 }
 
+/* Contact form (Formspree — email not in source) */
+.contact-form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+    max-width: 100%;
+}
+
+.contact-form-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+.contact-form-status {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    margin: 0;
+    min-height: 1.5em;
+}
+
+.contact-form-status.is-success {
+    color: var(--text-muted);
+}
+
+.contact-form-status.is-error {
+    color: #b91c1c;
+}
+
+.contact-form-field label {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+}
+
+.contact-form-required {
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--text-subtle);
+}
+
+.contact-form-field input,
+.contact-form-field textarea {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.contact-form-field textarea {
+    resize: vertical;
+    min-height: 9rem;
+}
+
+.contact-form-field input:focus,
+.contact-form-field textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.contact-form-submit {
+    align-self: flex-start;
+    margin-top: 0.25rem;
+    padding: 0.65rem 1.25rem;
+    font-family: var(--font-ui);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: var(--accent);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.contact-form-submit:hover {
+    background-color: var(--accent-hover);
+}
+
+.contact-form-submit:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.contact-form-submit:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
 /* Header image (home) */
 .header-image-section {
     width: 100%;

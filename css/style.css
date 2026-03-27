@@ -611,6 +611,17 @@ a:hover {
     color: var(--text-subtle);
 }
 
+/* Best Writing on Mathematics — home: same list pattern as Selected Work, readable measure */
+.best-writing-inner {
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.best-writing-section .article-item:first-child {
+    padding-top: 0;
+}
+
 /* About */
 .about-content {
     display: grid;

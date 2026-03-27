@@ -349,7 +349,7 @@ a:hover {
 .book-pullquote p {
     margin: 0;
     font-family: var(--font-display);
-    font-size: clamp(2.7rem, 6.4vw, 4.1rem);
+    font-size: clamp(2.025rem, 4.8vw, 3.075rem);
     font-weight: 500;
     line-height: 1.35;
     color: var(--text);

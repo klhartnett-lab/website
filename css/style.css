@@ -495,6 +495,15 @@ a:hover {
     align-items: stretch;
 }
 
+/* Praise block: list margin stacks with section padding + next section’s padding — drop it so the seam matches Book → Praise */
+.reviews-section {
+    border-bottom: 1px solid var(--border);
+}
+
+.reviews-section .featured-list {
+    margin-bottom: 0;
+}
+
 .featured-block {
     margin: 0;
     padding: 0.9rem 1rem;

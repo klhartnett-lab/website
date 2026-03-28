@@ -9,10 +9,7 @@
     --text-subtle: #64748b;
     --border: #e2e8f0;
     --border-strong: #cbd5e1;
-    --accent: #2563eb;
-    --accent-soft: rgba(37, 99, 235, 0.08);
-    --accent-hover: #1d4ed8;
-    /* Navy for publisher line, primary CTAs */
+    /* Navy for links, publisher line, primary CTAs */
     --accent-navy: #1e3a8a;
     --accent-navy-hover: #172554;
     --accent-navy-soft: rgba(30, 58, 138, 0.18);
@@ -90,11 +87,11 @@ body {
 }
 
 .site-brand-lockup:hover .site-brand {
-    color: var(--accent);
+    color: var(--accent-navy);
 }
 
 .site-brand-lockup:hover .site-headshot {
-    border-color: var(--accent);
+    border-color: var(--accent-navy);
 }
 
 .site-nav ul {
@@ -118,7 +115,7 @@ body {
 }
 
 .site-nav a:hover {
-    color: var(--accent);
+    color: var(--accent-navy);
     text-decoration: none;
 }
 
@@ -163,7 +160,7 @@ p {
 }
 
 a {
-    color: var(--accent);
+    color: var(--accent-navy);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
@@ -171,7 +168,7 @@ a {
 }
 
 a:hover {
-    color: var(--accent-hover);
+    color: var(--accent-navy-hover);
     text-decoration-thickness: 2px;
 }
 
@@ -259,8 +256,8 @@ a:hover {
 .contact-form-field input:focus,
 .contact-form-field textarea:focus {
     outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px var(--accent-soft);
+    border-color: var(--accent-navy);
+    box-shadow: 0 0 0 3px var(--accent-navy-soft);
 }
 
 .contact-form-submit {
@@ -533,7 +530,7 @@ a:hover {
 }
 
 .featured-block h3 a:hover {
-    color: var(--accent);
+    color: var(--accent-navy);
     text-decoration: underline;
     text-underline-offset: 3px;
 }
@@ -574,10 +571,11 @@ a:hover {
     letter-spacing: 0.1em;
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--accent);
+    color: var(--accent-navy);
 }
 
 .section-link a:hover {
+    color: var(--accent-navy-hover);
     text-decoration: underline;
     text-underline-offset: 4px;
 }
@@ -611,7 +609,7 @@ a:hover {
 }
 
 .article-item h3 a:hover {
-    color: var(--accent);
+    color: var(--accent-navy);
 }
 
 .article-item p {
@@ -643,11 +641,11 @@ a:hover {
 }
 
 .best-writing-card-link:hover h3 {
-    color: var(--accent);
+    color: var(--accent-navy);
 }
 
 .best-writing-card-link:focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--accent-navy);
     outline-offset: 2px;
 }
 

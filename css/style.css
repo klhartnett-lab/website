@@ -555,6 +555,11 @@ a:hover {
     font-style: italic;
 }
 
+.featured-meta-linkline {
+    display: block;
+    margin-top: 0.35rem;
+}
+
 .featured-section .section-link {
     text-align: left;
 }

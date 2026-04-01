@@ -13,3 +13,7 @@ Thumbs.db
 __pycache__/
 *.pyc
 
+# Node (subprojects)
+writing-app/node_modules/
+writing-app/dist/
+

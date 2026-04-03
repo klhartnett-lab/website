@@ -627,6 +627,87 @@ a:hover {
     color: var(--text-subtle);
 }
 
+/* Blog posts */
+.post {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2.5rem 0 4rem;
+}
+
+.post-header {
+    margin-bottom: 2rem;
+}
+
+.post-title {
+    margin-bottom: 0.75rem;
+}
+
+.post-byline {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 0.35rem;
+}
+
+.post-date {
+    font-size: 0.9rem;
+    color: var(--text-subtle);
+    margin: 0;
+}
+
+.post h2 {
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.post h3 {
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+    font-size: clamp(1.15rem, 2vw, 1.35rem);
+}
+
+.post hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+}
+
+.post-figure {
+    margin: 1.75rem 0;
+}
+
+.post-figure--placeholder .post-placeholder {
+    min-height: 12rem;
+    border: 1px dashed var(--border-strong);
+    border-radius: 2px;
+    background: var(--bg-panel-hover);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    text-align: center;
+    font-family: var(--font-ui);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-subtle);
+}
+
+.post-figure figcaption {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-top: 0.65rem;
+    line-height: 1.5;
+}
+
+.post code {
+    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+    font-size: 0.9em;
+    background: var(--bg-panel-hover);
+    padding: 0.12em 0.35em;
+    border-radius: 2px;
+}
+
 /* Best Writing on Mathematics — three-up cards with tile art */
 .best-writing-card {
     padding: 0;

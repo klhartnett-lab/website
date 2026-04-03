@@ -101,7 +101,7 @@
 
         <p><strong>Traditional path:</strong> Pads each expert’s token list to power-of-2, or 128 byte, boundaries to conform to grouped kernel requirements. At decode time with a single token this is non-amortizable overhead.</p>
 
-        <p><strong>Warp decode path:</strong> Avoids grouped-kernel padding by assigning one output per warp; no per-expert token lists need to be padded for alignment in the same way.</p>
+        <p><strong>Warp decode path:</strong> The warp-based approach avoids this overhead entirely by never forming per-expert batches.</p>
 
         <h4>Elimination of scatter and combine</h4>
 

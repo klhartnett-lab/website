@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --ink: #0f172a;
+  --muted: #64748b;
+  --bg: #fafaf9;
+  --panel: #ffffff;
+  --panel-hover: #f1f5f9;
+  --border: #e2e8f0;
+  --accent: #1e3a8a;
+  --accent-soft: rgba(30, 58, 138, 0.1);
+  --accent-border: rgba(30, 58, 138, 0.25);
+  --accent-ring: rgba(30, 58, 138, 0.45);
+  --shadow: 0 10px 40px rgba(15, 23, 42, 0.06);
+  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --serif: 'Cormorant Garamond', 'Georgia', serif;
+
+  font-family: var(--sans);
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--ink);
+  background-color: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f1f5f9;
+    --muted: #94a3b8;
+    --bg: #0f172a;
+    --panel: #1e293b;
+    --panel-hover: #334155;
+    --border: #334155;
+    --accent: #93c5fd;
+    --accent-soft: rgba(147, 197, 253, 0.12);
+    --accent-border: rgba(147, 197, 253, 0.35);
+    --accent-ring: rgba(147, 197, 253, 0.5);
+    --shadow: 0 12px 48px rgba(0, 0, 0, 0.35);
+  }
+
+  .btn.primary {
+    color: #0f172a;
+  }
+
+  .rating.on {
+    color: #0f172a;
+  }
+}
